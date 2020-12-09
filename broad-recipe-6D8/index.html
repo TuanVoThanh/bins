@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+* {
+  font-family: sans-serif;
+}
+.box{
+    height: 100px;
+    width: 100px;
+}
+#boxes{
+    display: flex;
+}
+
+h1{
+    text-align: center;
+}
+</style>
+</head>
+<body>
+	<h1>Text color</h1>
+  <div id="boxes"></div>
+<!--boot js--><script id="jsbin-javascript" defer>// console.clear()
+const colors = [
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "purple",
+  "indigo",
+  "violet",
+];
+
+const container = document.querySelector("#boxes");
+
+const changeColor = function () {
+  // console.log(this)
+  //   console.log(this.style.backgroundColor)
+  const txtColor = this.style.backgroundColor;
+  const h1 = document.querySelector("h1");
+  h1.style.color = txtColor;
+};
+
+for (let color of colors) {
+  const box = document.createElement("div");
+  box.classList.add("box");
+  box.style.backgroundColor = color;
+  container.appendChild(box);
+  box.addEventListener("click", changeColor);
+}
+
+</script>
+</body>
+</html>
